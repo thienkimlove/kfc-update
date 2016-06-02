@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/*
+Theme Name: Theme name
+Theme URI: Theme URI
+Author: Team Codeshore
+Author URI: http://codeshore.com/
+Description: Description theme
+Version:  1.4
+*/
+/*@font-face {
+  font-family: "Open Sans";
+  src: url("../font/open-sans.eot?") format("eot"),
+  url("../font/open-sans.woff") format("woff"),
+  url("../font/open-sans.ttf") format("truetype");
+}*/
+$global-font: Arial, sans-serif;
+$global-font-android: Roboto, "Droid Sans Japanese", "Droid Sans", sans-serif;
+$global-line-height: 1.42;
+$global-font-size: 13px;
+$global-color: #333;
+$global-color-link: #333;
+$global-color-hover: #cc0000;
+@mixin transition($property: all, $duration: 0.2s, $function: ease){
+  -webkit-transition: #{$property}  #{$duration}  #{$function};
+  -moz-transition: #{$property}  #{$duration}  #{$function};
+  -ms-transition: #{$property}  #{$duration}  #{$function};
+  -o-transition: #{$property}  #{$duration}  #{$function};
+  transition: #{$property}  #{$duration}  #{$function};
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+body {
+  font: 400 $global-font-size $global-font;
+  line-height: $global-line-height;
+  color: $global-color;
+  background: #fff8f2;
+}
+html,body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display:block;
+}
+
+nav ul {
+  list-style:none;
+}
+
+blockquote, q {
+  quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
+a {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration:none;
+  @include transition();
+  color: $global-color-link;
+}
+a:hover{
+  color: $global-color-hover;
+}
+
+ins {
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
+}
+
+mark {
+  background-color:#ff9;
+  color:#000;
+  font-style:italic;
+  font-weight:bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom:1px dotted;
+  cursor:help;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+hr {
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+input, select {
+  vertical-align:middle;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
