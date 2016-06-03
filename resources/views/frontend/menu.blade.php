@@ -3,7 +3,7 @@
     <ul>
         @foreach ($headerCatalogs as $headerCatalog)
             <li>
-                <a href="{{url('catalog', \App\Custom::slug($headerCatalog->name))}}" title="">{{$headerCatalog->name}}</a>
+                <a href="{{url('catalog', \App\Custom::slug($headerCatalog->name).'-'.$headerCatalog->id)}}" title="">{{$headerCatalog->name}}</a>
             </li>
         @endforeach
     </ul>
@@ -14,17 +14,17 @@
 
 @foreach ($headerCategories as $headerCategory)
     <li>
-        <a href="{{url('category', \App\Custom::slug($headerCategory->name))}}" title="{{$headerCategory->name}}">{{$headerCategory->name}}</a>
+        <a class="{{ (isset($page) && $page == $headerCategory->name) ? 'active' : '' }}" href="{{url('category', \App\Custom::slug($headerCategory->name).'-'.$headerCategory->id)}}" title="{{$headerCategory->name}}">{{$headerCategory->name}}</a>
         @if ($headerCategory->subCategories->count() > 0)
             <ul>
                 @foreach ($headerCategory->subCategories as $subCategory)
                     <li>
-                        <a href="{{url('category', \App\Custom::slug($subCategory->name))}}" title="{{$subCategory->name}}">{{$subCategory->name}}</a>
+                        <a class="{{ (isset($page) && $page == $subCategory->name) ? 'active' : '' }}" href="{{url('category', \App\Custom::slug($subCategory->name).'-'.$subCategory->id)}}" title="{{$subCategory->name}}">{{$subCategory->name}}</a>
                         @if ($subCategory->subCategories->count() > 0)
                             <ul class="sub-menu">
                                 @foreach ($subCategory->subCategories as $sub2ndCategory)
                                     <li>
-                                        <a href="{{url('category', \App\Custom::slug($sub2ndCategory->name))}}" title="{{$sub2ndCategory->name}}">{{$sub2ndCategory->name}}</a>
+                                        <a class="{{ (isset($page) && $page == $sub2ndCategory->name) ? 'active' : '' }}" href="{{url('category', \App\Custom::slug($sub2ndCategory->name).'-'.$sub2ndCategory->id)}}" title="{{$sub2ndCategory->name}}">{{$sub2ndCategory->name}}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -37,7 +37,7 @@
 @endforeach
 
 <li>
-    <a href="{{url('promo')}}" title="">{{trans('frontend.menu_promo')}}</a>
+    <a class="{{ (isset($page) && $page == 'promotion') ? 'active' : '' }}" href="{{url('promotion')}}" title="">{{trans('frontend.menu_promo')}}</a>
 </li>
 <li>
     <a href="{{url('/')}}" title=""><img src="{{url('frontend/images/menu_play_btn.png')}}" alt=""></a>

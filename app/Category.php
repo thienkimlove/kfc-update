@@ -11,9 +11,10 @@ class Category extends Model
 {
     use Translatable;
 
-    public $translatedAttributes = ['name'];
+    public $translatedAttributes = ['name', 'content'];
     protected $fillable = [
         'name',
+        'content',
         'parent_id',
         'display_as_post'
     ];

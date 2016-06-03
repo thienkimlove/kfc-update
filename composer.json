@@ -13,7 +13,8 @@
         "intervention/imagecache": "^2.3",
         "cviebrock/eloquent-sluggable": "^3.1",
         "laravelcollective/html": "^5.2",
-        "dimsav/laravel-translatable": "^5.6"
+        "dimsav/laravel-translatable": "^5.6",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

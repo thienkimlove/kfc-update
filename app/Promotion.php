@@ -11,4 +11,6 @@ class Promotion extends Model
 
     public $translatedAttributes = ['title', 'desc', 'content'];
     protected $fillable = ['title', 'desc', 'content', 'status', 'image'];
+
+    public $dates = ['updated_at', 'created_at'];
 }

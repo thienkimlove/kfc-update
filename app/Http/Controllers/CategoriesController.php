@@ -42,13 +42,14 @@ class CategoriesController extends AdminController
         $update = [];
 
         $update['parent_id'] = !empty($data['parent_id']) ?  $data['parent_id'] : null;
-        $update['display_as_post'] = !empty($data['display_as_post']) ?  $data['display_as_post'] : null;
+        $update['display_as_post'] = ($request->input('display_as_post') == 'on') ? true : false;
 
 
         $category = Category::create($update);
 
         foreach (config('const.lang') as $lang) {
             $category->translateOrNew($lang)->name = $data['name_'. $lang];
+            $category->translateOrNew($lang)->content = $data['content_'. $lang];
         }
 
         $category->save();
@@ -83,16 +84,14 @@ class CategoriesController extends AdminController
 
         foreach (config('const.lang') as $lang) {
             $category->translateOrNew($lang)->name = $data['name_'.$lang];
+            $category->translateOrNew($lang)->content = $data['content_'.$lang];
         }
-
-
-        if (!empty($data['display_as_post'])) {
-            $category->display_as_post = (int) $data['display_as_post'];
-        }
-
+        
         if (!empty($data['parent_id'])) {
             $category->parent_id = (int) $data['parent_id'];
         }
+
+        $category->display_as_post = ($request->input('display_as_post') == 'on') ? true : false;
 
         $category->save();
 

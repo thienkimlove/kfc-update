@@ -16,6 +16,9 @@ class AdminController extends Controller
         
         if (session()->has('language')) {
             app()->setLocale(session()->get('language'));
+        } else {
+            session()->set('language', 'vi');
+            app()->setLocale('vi');
         }
     }
 

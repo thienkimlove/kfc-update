@@ -12,4 +12,9 @@ class Custom
    {      
        return Str::slug($content);
    }
+    
+   public static function map($restaurant)
+   {
+       return $restaurant->address.','.$restaurant->city.','.$restaurant->postal_code.','.$restaurant->country;
+   }
 }

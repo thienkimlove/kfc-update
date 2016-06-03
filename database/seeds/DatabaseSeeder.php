@@ -34,6 +34,18 @@ class DatabaseSeeder extends Seeder
                 'value' => 'VitaminC'
             ],
             [
+                'name' => 'META_RESTAURANT_TITLE',
+                'value' => 'VitaminC'
+            ],
+            [
+                'name' => 'META_RESTAURANT_DESC',
+                'value' => 'VitaminC'
+            ],
+            [
+                'name' => 'META_RESTAURANT_KEYWORDS',
+                'value' => 'VitaminC'
+            ],
+            [
                 'name' => 'META_CATEGORY_DESC',
                 'value' => 'VitaminC'
             ],
@@ -42,56 +54,31 @@ class DatabaseSeeder extends Seeder
                 'value' => 'VitaminC'
             ],
             [
+                'name' => 'META_CATALOG_DESC',
+                'value' => 'VitaminC'
+            ],
+            [
+                'name' => 'META_CATALOG_KEYWORDS',
+                'value' => 'VitaminC'
+            ],
+            [
                 'name' => 'META_POST_KEYWORDS',
                 'value' => 'VitaminC'
             ],
             [
-                'name' => 'META_CONTACT_TITLE',
+                'name' => 'META_PRODUCT_KEYWORDS',
                 'value' => 'VitaminC'
             ],
             [
-                'name' => 'META_CONTACT_DESC',
+                'name' => 'META_PROMOTION_TITLE',
                 'value' => 'VitaminC'
             ],
             [
-                'name' => 'META_CONTACT_KEYWORDS',
+                'name' => 'META_PROMOTION_DESC',
                 'value' => 'VitaminC'
             ],
             [
-                'name' => 'META_VIDEO_TITLE',
-                'value' => 'VitaminC'
-            ],
-            [
-                'name' => 'META_VIDEO_DESC',
-                'value' => 'VitaminC'
-            ],
-            [
-                'name' => 'META_VIDEO_KEYWORDS',
-                'value' => 'VitaminC'
-            ],
-            [
-                'name' => 'META_QUESTION_TITLE',
-                'value' => 'VitaminC'
-            ],
-            [
-                'name' => 'META_QUESTION_DESC',
-                'value' => 'VitaminC'
-            ],
-            [
-                'name' => 'META_QUESTION_KEYWORDS',
-                'value' => 'VitaminC'
-            ],
-
-            [
-                'name' => 'META_DELIVERY_TITLE',
-                'value' => 'VitaminC'
-            ],
-            [
-                'name' => 'META_DELIVERY_DESC',
-                'value' => 'VitaminC'
-            ],
-            [
-                'name' => 'META_DELIVERY_KEYWORDS',
+                'name' => 'META_PROMOTION_KEYWORDS',
                 'value' => 'VitaminC'
             ],
         ];

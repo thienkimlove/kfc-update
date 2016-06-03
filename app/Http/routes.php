@@ -40,6 +40,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('admin/promotions', 'PromotionsController');
     Route::resource('admin/settings', 'SettingsController');
     Route::resource('admin/banners', 'BannersController');
+    Route::resource('admin/restaurants', 'RestaurantsController');
 
     Route::post('admin/lang', function(\Illuminate\Http\Request $request){
         if ($request->input('lang')) {
@@ -52,5 +53,9 @@ Route::group(['middleware' => 'web'], function () {
 #Frontend Routes
 
 Route::get('/', 'FrontendController@index');
+Route::get('category/{value}', 'FrontendController@category');
+Route::get('restaurant', 'FrontendController@restaurant');
+Route::get('restaurant-list', 'FrontendController@restaurantList');
+Route::get('promotion', 'FrontendController@promotion');
 
 

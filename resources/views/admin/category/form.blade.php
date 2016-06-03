@@ -30,10 +30,17 @@
                 {!! Form::select('parent_id', $parents, null, ['class' => 'form-control']) !!}
             </div>
 
-            <div class="form-group">
-                {!! Form::label('display_as_post', 'Hien thi bai post trong detail cua chuyen muc') !!}
-                {!! Form::text('display_as_post', null, ['class' => 'form-control']) !!}
-            </div>
+                <div class="form-group">
+                    {!! Form::label('display_as_post', 'Display Category Details as HTML') !!}
+                    {!! Form::checkbox('display_as_post', null, null) !!}
+                </div>
+
+                @foreach(config('const.lang') as $lang)
+                    <div class="form-group">
+                        {!! Form::label('content_'.$lang, 'Content '.$lang) !!}
+                        {!! Form::textarea('content_'.$lang, $category->translateOrNew($lang)->content, ['class' => 'form-control ckeditor']) !!}
+                    </div>
+                @endforeach
 
 
             <div class="form-group">

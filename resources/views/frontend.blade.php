@@ -49,7 +49,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 </head>
-<body class="home">
+<body class="{{ (isset($page) && $page == 'restaurant') ? 'restaurant' : 'home'}}">
+@if (isset($page) && $page == 'restaurant')
+    <div id="googlemaps"></div>
+@endif
 <div class="wrapper" id="wrapper">
     @include('frontend.header')
     <!-- //layoutHome -->
@@ -79,7 +82,9 @@
 </div>
 <script type="text/javascript" src="{{url('frontend/js/jquery-1.10.2.min.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/common.js')}}"></script>
+<script type="text/javascript" src="{{url('frontend/js/map.js')}}"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
@@ -94,5 +99,6 @@
         });
     });
 </script>
+@yield('footer_script')
 </body>
 </html>
