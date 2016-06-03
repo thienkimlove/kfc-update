@@ -10,7 +10,7 @@
     <div class="header-mid">
         <div class="fix">
             <h1>
-                <a href="" title="" class="logo">Tên game</a>
+                <a href="http://www.cagaileo.com" title="" class="logo">Tên game</a>
             </h1>
             <nav>
                 <ul class="nav-main">
