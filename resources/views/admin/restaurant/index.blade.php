@@ -38,7 +38,10 @@
                                 <th>Postal Code</th>
                                 <th>Country</th>
                                 <th>Phone</th>
-                                <th>Open - Close</th>
+                                <th>Open-Close</th>
+                                <th>Lat</th>
+                                <th>Lon</th>
+                                <th>Wifi</th>
                                 <th>Image</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -56,6 +59,9 @@
                                     <td>{{$restaurant->country }}</td>
                                     <td>{{$restaurant->phone }}</td>
                                     <td>{{$restaurant->open}} : {{$restaurant->close}}</td>
+                                    <td>{{$restaurant->lat }}</td>
+                                    <td>{{$restaurant->lon }}</td>
+                                    <td>{{ ($restaurant->wifi) ? 'Yes' : 'No'  }}</td>
                                     <td><img src="{{url('img/cache/120x120/' . $restaurant->image)}}" /></td>
                                     <td>{{ ($restaurant->status) ? 'Yes' : 'No'  }}</td>
                                     <td>
