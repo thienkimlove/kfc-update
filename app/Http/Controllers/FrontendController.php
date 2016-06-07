@@ -165,16 +165,18 @@ class FrontendController extends Controller
 
         if (isset($matches[2][0])) {
             $page = 'category';
+            $posts = null;
             $category = Category::with('translations')->find($matches[2][0]);
 
             if ($category->display_as_post) {
                 $view = 'frontend.category_details';
 
             } else {
+                $posts = Post::where('category_id', $category->id)->where('status', true)->latest('updated_at')->paginate(env('ITEM_PER_PAGE'));
                 $view = 'frontend.category_lists';
             }
 
-            return view($view, compact('category', 'page'))->with($this->generateMeta('category', $category));
+            return view($view, compact('category', 'page', 'posts'))->with($this->generateMeta('category', $category));
         }
     }
 

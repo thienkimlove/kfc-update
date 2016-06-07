@@ -1,5 +1,5 @@
 @if ($paginate->lastPage() > 1)
-        <ul class="navPaging">
+        <ul class="nav-paging">
             <li>
                 <a class="{{ ($paginate->currentPage() == 1) ? 'disabled' : '' }}" href="{{ $paginate->url(1) }}">Previous</a>
             </li>
@@ -13,3 +13,4 @@
             </li>
         </ul>
 @endif
+

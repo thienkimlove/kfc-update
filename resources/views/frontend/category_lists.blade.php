@@ -4,7 +4,7 @@
     <section class="section fix">
         <div class="layout-home">
             <div class="box-article">
-                @foreach ($category->posts as $post)
+                @foreach ($posts as $post)
                 <article class="item cf">
                     <a href="{{url('posts', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
                         <img src="{{url('img/cache/220x130', $post->image)}}" width="220" height="130" alt=""/>
@@ -34,6 +34,12 @@
                     </div>
                 </article>
                 @endforeach
+            </div>
+
+
+            <div class="box-paging">
+                 @include('pagination.default', ['paginate' => $posts])
+                <div class="clear"></div>
             </div>
         </div><!--//layout-home-->
     </section>
