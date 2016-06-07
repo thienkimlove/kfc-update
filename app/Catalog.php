@@ -12,4 +12,10 @@ class Catalog extends Model
     public $translatedAttributes = ['name'];
     protected $fillable = ['name', 'status'];
 
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
 }

@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\Banner;
+use App\Catalog;
 use App\Category;
 use App\Custom;
+use App\Post;
+use App\Product;
 use App\Promotion;
 use App\Restaurant;
 use App\Setting;
@@ -22,7 +25,7 @@ class FrontendController extends Controller
         }
     }
 
-    protected function generateMeta($case = null, $meta = [], $mainContent = null)
+    protected function generateMeta($case = null, $mainContent = null)
     {
         $defaultLogo = url(env('LOGO_URL'));
         $settings = Setting::lists('value', 'name')->all();
@@ -39,20 +42,30 @@ class FrontendController extends Controller
 
             case 'post' :
                 return [
-                    'meta_title' => $meta['title'],
-                    'meta_desc' => $meta['desc'],
+                    'meta_title' => $mainContent->title,
+                    'meta_desc' => $mainContent->desc,
                     'meta_keywords' => $settings['META_POST_KEYWORDS'],
-                    'meta_url' => url('post', Custom::slug($mainContent->title)),
+                    'meta_url' => url('post', Custom::slug($mainContent->title).'-'.$mainContent->id),
                     'meta_image' => url('img/cache/120x120/'.$mainContent->image) 
                 ];
                 break;
 
             case 'product' :
                 return [
-                    'meta_title' => $meta['title'],
-                    'meta_desc' => $meta['desc'],
+                    'meta_title' => $mainContent->title,
+                    'meta_desc' => $mainContent->desc,
                     'meta_keywords' => $settings['META_PRODUCT_KEYWORDS'],
-                    'meta_url' => url('product', Custom::slug($mainContent->title)),
+                    'meta_url' => url('product', Custom::slug($mainContent->title).'-'.$mainContent->id),
+                    'meta_image' => url('img/cache/120x120/'.$mainContent->image)
+                ];
+                break;
+
+            case 'promotion_details' :
+                return [
+                    'meta_title' => $mainContent->title,
+                    'meta_desc' => $mainContent->desc,
+                    'meta_keywords' => $settings['META_PROMOTION_KEYWORDS'],
+                    'meta_url' => url('promotion', Custom::slug($mainContent->title).'-'.$mainContent->id),
                     'meta_image' => url('img/cache/120x120/'.$mainContent->image)
                 ];
                 break;
@@ -89,8 +102,8 @@ class FrontendController extends Controller
 
             case 'catalog' :
                 return [
-                    'meta_title' => $meta['title'],
-                    'meta_desc' => $meta['desc'],
+                    'meta_title' => $mainContent->name,
+                    'meta_desc' => $settings['META_CATALOG_DESC'],
                     'meta_keywords' => $settings['META_CATALOG_KEYWORDS'],
                     'meta_url' => url('catalog', Custom::slug($mainContent->name)),
                     'meta_image' => $defaultLogo
@@ -129,31 +142,72 @@ class FrontendController extends Controller
         return view('frontend.restaurant_list', compact('restaurants', 'page'))->with($this->generateMeta('restaurant'));
     }
 
-    public function promotion()
-    {
+    public function promotion($value = null)
+    {        
         $page = 'promotion';
-        $promotions = Promotion::with('translations')->get();
-        return view('frontend.promotion', compact('promotions', 'page'))->with($this->generateMeta('promotion'));
+        if (!$value) {
+            $promotions = Promotion::with('translations')->get();
+            return view('frontend.promotion', compact('promotions', 'page'))->with($this->generateMeta('promotion'));
+        } else {
+            preg_match_all("/^(.*)-(\\d+)$/", $value, $matches);
+
+            if (isset($matches[2][0])) {
+                $promotion = Promotion::with('translations')->find($matches[2][0]);
+                
+                return view('frontend.promotion_details', compact('page', 'promotion'))->with($this->generateMeta('promotion_details', $promotion));
+            }
+        }       
     }
 
     public function category($value)
     {
         preg_match_all("/^(.*)-(\\d+)$/", $value, $matches);
 
-        dd($matches);
-
         if (isset($matches[2][0])) {
             $page = 'category';
-            $category = Category::with('translations')->find($matches[1]);
+            $category = Category::with('translations')->find($matches[2][0]);
 
             if ($category->display_as_post) {
-                $view = 'frontend.details';
+                $view = 'frontend.category_details';
 
             } else {
-                $view = 'frontend.category';
+                $view = 'frontend.category_lists';
             }
 
             return view($view, compact('category', 'page'))->with($this->generateMeta('category', $category));
+        }
+    }
+
+    public function catalog($value)
+    {
+        preg_match_all("/^(.*)-(\\d+)$/", $value, $matches);
+
+        if (isset($matches[2][0])) {
+            $page = 'catalog';
+            $catalog = Catalog::with('translations')->find($matches[2][0]);
+            return view('frontend.catalog', compact('catalog', 'page'))->with($this->generateMeta('catalog', $catalog));
+        }
+    }
+
+    public function product($value)
+    {
+        preg_match_all("/^(.*)-(\\d+)$/", $value, $matches);
+
+        if (isset($matches[2][0])) {
+            $page = 'product';
+            $product = Product::with('translations')->find($matches[2][0]);
+            return view('frontend.product_details', compact('product', 'page'))->with($this->generateMeta('product', $product));
+        }
+    }
+
+    public function post($value)
+    {
+        preg_match_all("/^(.*)-(\\d+)$/", $value, $matches);
+
+        if (isset($matches[2][0])) {
+            $page = 'post';
+            $post = Post::with('translations')->find($matches[2][0]);
+            return view('frontend.post_details', compact('post', 'page'))->with($this->generateMeta('post', $post));
         }
     }
 }

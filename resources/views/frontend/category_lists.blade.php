@@ -4,19 +4,19 @@
     <section class="section fix">
         <div class="layout-home">
             <div class="box-article">
-                @foreach ($promotions as $promotion)
+                @foreach ($category->posts as $post)
                 <article class="item cf">
-                    <a href="{{url('promotion', \App\Custom::slug($promotion->title).'-'.$promotion->id)}}" title="">
-                        <img src="{{url('img/cache/220x130', $promotion->image)}}" width="220" height="130" alt=""/>
+                    <a href="{{url('posts', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
+                        <img src="{{url('img/cache/220x130', $post->image)}}" width="220" height="130" alt=""/>
                     </a>
-                    <time class="time" datetime="{{$promotion->created_at->toDateString()}}">{{$promotion->created_at->toDateString()}}</time>
+                    <time class="time" datetime="{{$post->created_at->toDateString()}}">{{$post->created_at->toDateString()}}</time>
                     <h3>
-                        <a href="#" title="">
-                            {{$promotion->title}}
+                        <a href="{{url('posts', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
+                            {{$post->title}}
                         </a>
                     </h3>
                     <p>
-                        {{$promotion->desc}}
+                        {{$post->desc}}
                     </p>
                     <div class="soc-sharing">
                         <div class="sharing-item kfc-media">

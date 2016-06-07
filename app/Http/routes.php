@@ -54,8 +54,11 @@ Route::group(['middleware' => 'web'], function () {
 
 Route::get('/', 'FrontendController@index');
 Route::get('category/{value}', 'FrontendController@category');
+Route::get('catalog/{value}', 'FrontendController@catalog');
 Route::get('restaurant', 'FrontendController@restaurant');
 Route::get('restaurant-list', 'FrontendController@restaurantList');
-Route::get('promotion', 'FrontendController@promotion');
+Route::get('promotion/{value?}', 'FrontendController@promotion');
+Route::get('product/{value}', 'FrontendController@product');
+Route::get('post/{value}', 'FrontendController@post');
 
 
