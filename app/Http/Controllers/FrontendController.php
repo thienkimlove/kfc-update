@@ -128,11 +128,13 @@ class FrontendController extends Controller
         $page = 'restaurant';
         
         $location = '';
+
+        $restaurants = Restaurant::with('translations')->get();
         
         if ($request->input('q')) {
             $location = $request->input('q');
         }
-        return view('frontend.restaurant', compact('page', 'location'))->with($this->generateMeta('restaurant'));
+        return view('frontend.restaurant', compact('page', 'location', 'restaurants'))->with($this->generateMeta('restaurant'));
     }
 
     public function restaurantList()

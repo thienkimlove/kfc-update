@@ -82,6 +82,7 @@
     </div>
 </div>
 <script type="text/javascript" src="{{url('frontend/js/libs/jquery.js')}}"></script>
+<script type="text/javascript" src="{{url('frontend/js/lodash.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/libs/jquery-ui.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}"></script>

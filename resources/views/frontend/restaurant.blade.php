@@ -50,10 +50,9 @@
     <script>
         $(function(){
             initialize();
-            var location = $('#address').val();
-            if (location) {
-                displayAddress([location]);
-            }
+            var restaurants = <?php echo $restaurants->toJson() ?>;
+
+            displayAddress(restaurants);
 
             $('#search-map').click(function(){
                 var address = [$('#address').val()];

@@ -45,6 +45,16 @@ class RestaurantsController extends AdminController
 
         $data['status'] = ($request->input('status') == 'on') ? true : false;
 
+        $data['wifi'] = ($request->input('wifi') == 'on') ? true : false;
+        $data['round_the_clock'] = ($request->input('round_the_clock') == 'on') ? true : false;
+        $data['car_distribution'] = ($request->input('car_distribution') == 'on') ? true : false;
+        $data['corporative'] = ($request->input('corporative') == 'on') ? true : false;
+        $data['degustation'] = ($request->input('degustation') == 'on') ? true : false;
+        $data['excursion'] = ($request->input('excursion') == 'on') ? true : false;
+        $data['takeaway'] = ($request->input('takeaway') == 'on') ? true : false;
+        $data['breakfast'] = ($request->input('breakfast') == 'on') ? true : false;
+        $data['promo'] = ($request->input('promo') == 'on') ? true : false;
+
         $restaurant = Restaurant::create($data);
 
         foreach (config('const.lang') as $lang) {
@@ -52,6 +62,8 @@ class RestaurantsController extends AdminController
                 $restaurant->translateOrNew($lang)->{$field} = $data[$field. '_' . $lang];
             }
         }
+
+        list($restaurant->lat, $restaurant->lon) = App\Custom::getLonLatFromAddress($restaurant);
 
         $restaurant->save();
      
@@ -84,6 +96,15 @@ class RestaurantsController extends AdminController
         $restaurant->open = $data['open'];
         $restaurant->close = $data['close'];
 
+        $restaurant->ext_phone = $data['ext_phone'];
+        $restaurant->breakfast_time = $data['breakfast_time'];
+        $restaurant->count_people_in_excursion = $data['count_people_in_excursion'];
+
+
+        list($restaurant->lat, $restaurant->lon) = App\Custom::getLonLatFromAddress($restaurant);
+
+        
+
         foreach (config('const.lang') as $lang) {
             foreach (['title', 'desc', 'content'] as $field) {
                 $restaurant->translateOrNew($lang)->{$field} = $data[$field. '_' . $lang];
@@ -91,6 +112,18 @@ class RestaurantsController extends AdminController
         }
 
         $restaurant->status = ($request->input('status') == 'on') ? true : false;
+
+        $restaurant->wifi = ($request->input('wifi') == 'on') ? true : false;
+        $restaurant->round_the_clock = ($request->input('round_the_clock') == 'on') ? true : false;
+        $restaurant->car_distribution = ($request->input('car_distribution') == 'on') ? true : false;
+        $restaurant->corporative = ($request->input('corporative') == 'on') ? true : false;
+        $restaurant->degustation = ($request->input('degustation') == 'on') ? true : false;
+        $restaurant->excursion = ($request->input('excursion') == 'on') ? true : false;
+        $restaurant->takeaway = ($request->input('takeaway') == 'on') ? true : false;
+        $restaurant->breakfast = ($request->input('breakfast') == 'on') ? true : false;
+        $restaurant->promo = ($request->input('promo') == 'on') ? true : false;
+
+
 
         $restaurant->save();
 

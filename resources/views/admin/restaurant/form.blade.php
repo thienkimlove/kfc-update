@@ -56,6 +56,11 @@
                 </div>
 
                 <div class="form-group">
+                    {!! Form::label('ext_phone', 'Ext Phone') !!}
+                    {!! Form::text('ext_phone', null, ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
                     {!! Form::label('open', 'Time Open') !!}
                     {!! Form::text('open', null, ['class' => 'form-control']) !!}
                 </div>
@@ -88,6 +93,62 @@
                 {!! Form::file('image', null, ['class' => 'form-control']) !!}
             </div>
 
+
+                <div class="form-group">
+                    {!! Form::label('wifi', 'Have WiFi?') !!}
+                    {!! Form::checkbox('wifi', null, null) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('round_the_clock', 'Round The Clock') !!}
+                    {!! Form::checkbox('round_the_clock', null, null) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('car_distribution', 'Car Distribution') !!}
+                    {!! Form::checkbox('car_distribution', null, null) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('corporative', 'Corporative') !!}
+                    {!! Form::checkbox('corporative', null, null) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('degustation', 'Degustation') !!}
+                    {!! Form::checkbox('degustation', null, null) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('count_people_in_degustation', 'Number People In Degustation') !!}
+                    {!! Form::text('count_people_in_degustation', null, ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('excursion', 'Excursion') !!}
+                    {!! Form::checkbox('excursion', null, null) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('count_people_in_excursion', 'Number People In Excursion') !!}
+                    {!! Form::text('count_people_in_excursion', null, ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('takeaway', 'TakeAway') !!}
+                    {!! Form::checkbox('takeaway', null, null) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('breakfast', 'Have Breakfast?') !!}
+                    {!! Form::checkbox('breakfast', null, null) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('breakfast_time', 'Breakfast Time') !!}
+                    {!! Form::text('breakfast_time', null, ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('promo', 'Have Promotions?') !!}
+                    {!! Form::checkbox('promo', null, null) !!}
+                </div>
 
 
             <div class="form-group">
