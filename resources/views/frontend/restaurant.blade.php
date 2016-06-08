@@ -509,6 +509,8 @@
 
             $('#show-map').click(function(){
                 $('div#restaurant-list').hide();
+                remove_marker();
+                place_markers(restaurants);
                 $('div#googlemaps').show();
             });
 
