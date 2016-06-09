@@ -39,5 +39,10 @@ class Restaurant extends Model
         'lon',
         'promo'
     ];
+
+    protected $casts = [
+        'lat' => 'float',
+        'lon' => 'float',
+    ];
    
 }

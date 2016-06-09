@@ -88,7 +88,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/common.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/libs/js-marker-clusterer/src/markerclusterer.js')}}"></script>
-<script type="text/javascript" src="{{url('frontend/js/map.js')}}"></script>
+
 <script type="text/javascript">
     $.ajaxSetup({
         headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }

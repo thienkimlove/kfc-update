@@ -18,7 +18,7 @@ function displayAddress(restaurants) {
     for (var i = 0 ; i < restaurants.length; i ++) {
         var marker = new google.maps.Marker({
             map: map,
-            position: [parseFloat(restaurants[i].lat), parseFloat(restaurants[i].lon)]
+            position: [restaurants[i].lat, restaurants[i].lon]
         });
     }
 }
