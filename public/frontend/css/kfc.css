@@ -1,12 +1,4 @@
 ﻿@charset "UTF-8";
-/*
-Theme Name: Theme name
-Theme URI: Theme URI
-Author: Team Codeshore
-Author URI: http://codeshore.com/
-Description: Description theme
-Version:  1.4
-*/
 /*@font-face {
   font-family: "Open Sans";
   src: url("../font/open-sans.eot?") format("eot"),
@@ -3425,6 +3417,21 @@ img {
 
   .layout-home .col-left .news-list .item p {
     clear: left;
+  }
+
+  .header-mid .logo {
+    display: none;
+  }
+
+  .box-more .item {
+    width: 100%;
+  }
+
+  .box-article .item .list-icon {
+    float: right;
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
   }
 }
 @media (min-width: 769px) and (max-width: 940px) {
