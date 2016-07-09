@@ -18,7 +18,7 @@
             </div>
             <div class="col-right">
                 <div class="search-box">
-                    <span class="title">Your KFC</span>
+                    <span class="title">Seach</span>
                     <input type="text" placeholder="" autocomplete="off">
                 </div>
                 <div class="box-map">

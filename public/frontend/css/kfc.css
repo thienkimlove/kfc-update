@@ -241,7 +241,7 @@ img {
   position: relative;
   background: #fff;
   border-bottom: 1px solid #ccc;
-  z-index: 9;
+  z-index: 10;
 }
 .header-mid .logo {
   width: 170px;
@@ -250,7 +250,7 @@ img {
   background: url("../images/logo.png") no-repeat;
   float: left;
   position: absolute;
-  top: -10px;
+  top: -35px;
   left: 0;
   z-index: 10;
 }
@@ -1784,6 +1784,9 @@ img {
   padding: 24px 19px;
 }
 
+.box-article {
+  padding-bottom: 30px;
+}
 .box-article .item {
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -1793,6 +1796,22 @@ img {
 .box-article .item img {
   float: left;
   margin-right: 20px;
+}
+.box-article .item .thumbs-video {
+  float: left;
+  display: block;
+  position: relative;
+}
+.box-article .item .thumbs-video:after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/play.png) no-repeat;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -14px 0 0 -14px;
 }
 .box-article .item .list-name {
   float: left;
