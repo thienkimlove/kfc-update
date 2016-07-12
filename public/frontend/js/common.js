@@ -1,5 +1,6 @@
 (function($){
-  var statusSearch = 0;$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+  var statusSearch = 0;
+  /*$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});*/
   var timeSearch = null;
   var delaySearch = 5000;
 
@@ -64,6 +65,8 @@ var padding_menu = 30;
     $('#slide-homepage').owlCarousel({
       loop:true,
       margin:0,
+      autoplay: true,
+      autoplayTimeout: 5000,
       responsiveClass:true,
       responsive:{
         0:{

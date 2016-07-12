@@ -1270,6 +1270,17 @@ img {
   width: 19.14894%;
   margin: 20px 0 20px 0.85106%;
 }
+.box-care .data .item > .title {
+  cursor: pointer;
+}
+.box-care .data .item > .title:hover {
+  color: #ff6600;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
 .box-care .data .item h3 a {
   font-weight: normal;
   color: #666;
