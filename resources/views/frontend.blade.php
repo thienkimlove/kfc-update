@@ -7,6 +7,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic,800italic,700,800&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{url('frontend/css/kfc.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{url('frontend/css/libs/jquery-ui.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{url('frontend/css/colorbox.css')}}" type="text/css"/>
     <meta content='KFC' name='generator'/>
     <title>{{$meta_title}}</title>
 
@@ -85,6 +86,7 @@
 <script type="text/javascript" src="{{url('frontend/js/lodash.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/libs/jquery-ui.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{url('frontend/js/jquery.colorbox-min.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/common.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/libs/js-marker-clusterer/src/markerclusterer.js')}}"></script>

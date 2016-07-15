@@ -57,6 +57,10 @@
                 {!! Form::file('image', null, ['class' => 'form-control']) !!}
             </div>
 
+                <div class="form-group">
+                    {!! Form::label('video_url', 'Video URL (Optional)') !!}
+                    {!! Form::text('video_url', null, ['class' => 'form-control']) !!}
+                </div>
 
 
             <div class="form-group">

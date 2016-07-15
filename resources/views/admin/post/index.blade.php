@@ -36,6 +36,7 @@
                                 <th>Category</th>
                                 <th>Desc</th>
                                 <th>Image</th>
+                                <th>Video</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -48,6 +49,7 @@
                                     <td>{{$post->category->name }}</td>
                                     <td>{!! str_limit($post->desc, 200) !!}</td>
                                     <td><img src="{{url('img/cache/120x120/' . $post->image)}}" /></td>
+                                    <td>{{$post->video_url}}</td>
                                     <td>{{ ($post->status) ? 'Yes' : 'No'  }}</td>
                                     <td>
                                         <button id-attr="{{$post->id}}" class="btn btn-primary btn-sm edit-post" type="button">Edit</button>&nbsp;

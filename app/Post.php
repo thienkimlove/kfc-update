@@ -11,7 +11,7 @@ class Post extends Model
 
     public $translatedAttributes = ['title', 'desc', 'content'];
 
-    protected $fillable = ['title', 'desc', 'content', 'status', 'image', 'category_id'];
+    protected $fillable = ['title', 'desc', 'content', 'status', 'image', 'category_id', 'video_url'];
 
     public function category()
     {

@@ -101,6 +101,7 @@ class PostsController extends AdminController
         }
         
         $post->category_id = $data['category_id'];
+        $post->video_url = $data['video_url'];
 
         foreach (config('const.lang') as $lang) {
             foreach (['title', 'desc', 'content'] as $field) {
