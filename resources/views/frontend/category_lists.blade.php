@@ -12,7 +12,7 @@
                             </a>
                             <time class="time" datetime="{{$post->created_at->toDateString()}}">{{$post->created_at->toDateString()}}</time>
                             <h3>
-                                <a href="{{url('posts', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
+                                <a href="{{url('post', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
                                     {{$post->title}}
                                 </a>
                             </h3>
@@ -22,12 +22,12 @@
                         </article>
                     @else
                         <article class="item cf">
-                            <a href="{{url('posts', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
+                            <a href="{{url('post', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
                                 <img src="{{url('img/cache/220x130', $post->image)}}" width="220" height="130" alt=""/>
                             </a>
                             <time class="time" datetime="{{$post->created_at->toDateString()}}">{{$post->created_at->toDateString()}}</time>
                             <h3>
-                                <a href="{{url('posts', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
+                                <a href="{{url('post', \App\Custom::slug($post->title).'-'.$post->id)}}" title="">
                                     {{$post->title}}
                                 </a>
                             </h3>
