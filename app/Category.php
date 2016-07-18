@@ -2,10 +2,8 @@
 
 namespace App;
 
-use App;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
-use Post;
 
 class Category extends Model
 {
