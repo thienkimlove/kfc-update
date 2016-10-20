@@ -95,7 +95,7 @@
     $.ajaxSetup({
         headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
     });
-    (function($){
+    jQuery(document).ready(function($){
         $('#set-language > a').click(function(e){
             e.preventDefault();
             $.post('/admin/lang', {'lang' : $(this).attr('id').replace('set', '') }, function(data){
@@ -103,7 +103,7 @@
                 window.location.reload();
             });
         });
-    })(jQuery);
+    });
 </script>
 @yield('footer_script')
 </body>

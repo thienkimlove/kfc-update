@@ -1,4 +1,4 @@
-(function($){
+jQuery(document).ready(function($){
   var statusSearch = 0;
   $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
   var timeSearch = null;
@@ -285,5 +285,5 @@ var padding_menu = 30;
       setMenuMobile();
       resetMenuMobile();
     });
-  })(jQuery);
+  });
 
