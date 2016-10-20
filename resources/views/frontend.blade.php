@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{url('frontend/css/kfc.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{url('frontend/css/libs/jquery-ui.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{url('frontend/css/colorbox.css')}}" type="text/css"/>
-    <meta name="_token" content="{{csrf_token()}}" />
+    <meta name="_token" content="{!! csrf_token() !!}"/>
     <meta content='KFC' name='generator'/>
     <title>{{$meta_title}}</title>
 
