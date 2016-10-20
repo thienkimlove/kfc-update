@@ -283,5 +283,5 @@ var padding_menu = 30;
   equalHeight(".box-member .data .item");
   setMenuMobile();
   resetMenuMobile();
-  });
+});
 
