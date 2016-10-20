@@ -70,7 +70,7 @@
                 <div class="search-in">
                     <form>
                         <input type="text" name="keyword" class="txt" placeholder="Từ khóa tìm kiếm"/>
-                        <input type="submit" name="submit" class="btn-find" value=""/>
+                        <input type="submit" name="submit-button" class="btn-find" value=""/>
                     </form>
                 </div>
             </div>
