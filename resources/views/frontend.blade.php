@@ -82,13 +82,14 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="{{url('frontend/js/libs/jquery.js')}}"></script>
+<script type="text/javascript" src="{{url('frontend/js/jquery-1.10.2.min.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/lodash.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/libs/jquery-ui.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/jquery.colorbox-min.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/common.js')}}"></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}"></script>
+<script type="text/javascript" src="{{url('frontend/js/libs/js-marker-clusterer/src/markerclusterer.js')}}"></script>
 
 <script type="text/javascript">
     $.ajaxSetup({

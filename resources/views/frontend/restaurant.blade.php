@@ -81,8 +81,6 @@
 @endsection
 
 @section('footer_script')
-    <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}"></script>
-    <script type="text/javascript" src="{{url('frontend/js/libs/js-marker-clusterer/src/markerclusterer.js')}}"></script>
     <script>
         $(function(){
             var restaurants = <?php echo $restaurants->toJson() ?>;
