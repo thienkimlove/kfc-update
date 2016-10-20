@@ -70,7 +70,7 @@
                 <div class="search-in">
                     <form>
                         <input type="text" name="keyword" class="txt" placeholder="Từ khóa tìm kiếm"/>
-                        <input type="submit" name="submit-button" class="btn-find" value=""/>
+                        <input type="submit" name="submit" class="btn-find" value=""/>
                     </form>
                 </div>
             </div>
@@ -88,14 +88,14 @@
 <script type="text/javascript" src="{{url('frontend/js/owl.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/jquery.colorbox-min.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}"></script>
-<script type="text/javascript" src="{{url('frontend/js/libs/js-marker-clusterer/src/markerclusterer.js')}}"></script>
 <script type="text/javascript" src="{{url('frontend/js/common.js')}}"></script>
+<script type="text/javascript" src="{{url('frontend/js/libs/js-marker-clusterer/src/markerclusterer.js')}}"></script>
 
 <script type="text/javascript">
     $.ajaxSetup({
         headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
     });
-    $(function(){
+    (function($){
         $('#set-language > a').click(function(e){
             e.preventDefault();
             $.post('/admin/lang', {'lang' : $(this).attr('id').replace('set', '') }, function(data){
@@ -103,7 +103,7 @@
                 window.location.reload();
             });
         });
-    });
+    })(jQuery);
 </script>
 @yield('footer_script')
 </body>
