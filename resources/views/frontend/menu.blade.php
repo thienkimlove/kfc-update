@@ -1,5 +1,5 @@
 <li>
-    <a class="{{ (isset($page) && $page == 'index') ? 'active' : '' }}" href="#" title="">Menu</a>
+    <a class="{{ (isset($page) && $page == 'index') ? 'active' : '' }}" href="#" title="">{{trans('frontend.menu_first')}}</a>
     <ul>
         @foreach ($headerCatalogs as $headerCatalog)
             <li>
