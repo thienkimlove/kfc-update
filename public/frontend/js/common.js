@@ -271,19 +271,17 @@ var padding_menu = 30;
       e.preventDefault();
     });
     //end
-    
-    jQuery(document).ready(function() {
-      changeSearch();
-      slideCompany();
-      slideHomepage();
-      slideProduct();
-      slideProject();
-      slideLink();
-      slidePartner();
-      tabContent();
-      equalHeight(".box-member .data .item");
-      setMenuMobile();
-      resetMenuMobile();
-    });
+
+  changeSearch();
+  slideCompany();
+  slideHomepage();
+  slideProduct();
+  slideProject();
+  slideLink();
+  slidePartner();
+  tabContent();
+  equalHeight(".box-member .data .item");
+  setMenuMobile();
+  resetMenuMobile();
   });
 
