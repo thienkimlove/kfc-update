@@ -1,11 +1,11 @@
 <div class="col-right">
     <div class="box-viewmap cf">
         <h3 class="title">
-            Find a KFC
+            Find a Fornari
         </h3>
         <div class="search-kfc">
             <input type="text" id="address" value="{{ (isset($location)) ? $location : '' }}" placeholder="Enter a city, address or subway" class="txt search ui-autocomplete-input" autocomplete="off">
-            <button id="search-map">Search</button>
+            <button id="search-map">{{trans('frontend.menu_search')}}</button>
         </div>
         <ul class="map-services-list">
             <li class="route m-ico current">

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="{{url('frontend/css/kfc.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{url('frontend/css/libs/jquery-ui.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{url('frontend/css/colorbox.css')}}" type="text/css"/>
-    <meta name="_token" content="{!! csrf_token() !!}"/>
-    <meta content='KFC' name='generator'/>
+    <meta name="csrf-token" content="<?php echo csrf_token(); ?>">
+    <meta content='Fornari' name='generator'/>
     <title>{{$meta_title}}</title>
 
     <meta property="og:title" content="{{$meta_title}}">
@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{$meta_url}}">
     <meta property="og:image" content="{{$meta_image}}">
-    <meta property="og:site_name" content="Thông huyết">
+    <meta property="og:site_name" content="Fornari">
 
     <meta name="twitter:card" content="Card">
     <meta name="twitter:url" content="{{$meta_url}}">
@@ -35,7 +35,7 @@
     <meta name="DESCRIPTION" content="{{$meta_desc}}"/>
     <meta name="KEYWORDS" content="{{$meta_keywords}}"/>
     <meta name="ROBOTS" content="index,follow"/>
-    <meta name="AUTHOR" content="Thông huyết"/>
+    <meta name="AUTHOR" content="Fornari"/>
     <meta name="RESOURCE-TYPE" content="DOCUMENT"/>
     <meta name="DISTRIBUTION" content="GLOBAL"/>
     <meta name="COPYRIGHT" content="Copyright 2013 by Goethe"/>
@@ -66,7 +66,7 @@
     <div class="overlay" id="overlay"></div>
     <div class="menu-left" id="menu-left">
         <div class="inner">
-            <a href="javascript:void(0)" title="Menu" class="btn-menu" id="btn-menu">Menu</a>
+            <a href="javascript:void(0)" title="Menu" class="btn-menu" id="btn-menu">{{trans('frontend.menu_first')}}</a>
             <div class="search">
                 <div class="search-in">
                     <form>
@@ -94,7 +94,9 @@
 
 <script type="text/javascript">
     $.ajaxSetup({
-        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
     });
     jQuery(document).ready(function($){
         $('#set-language > a').click(function(e){

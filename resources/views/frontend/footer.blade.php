@@ -2,12 +2,12 @@
     <div class="fix">
         <div class="item">
             <div class="copyright">
-                <img src="{{url('frontend/images/16plus.png')}}" alt="">&copy; NVB International Holdings Inc.
+                <img src="{{url('frontend/images/16plus.png')}}" alt="">Fonari International Holdings Inc.
             </div>
         </div>
         <div class="item">
             <div class="list-social">
-                <span>NVB - in a convenient format</span>
+                <span>Fonari - in a convenient format</span>
                 <a href="#" class="sp-vk" target="_blank">VK</a>
                 <a href="#" class="sp-ok" target="_blank">0K</a>
                 <a href="#" class="sp-in" target="_blank">In</a>

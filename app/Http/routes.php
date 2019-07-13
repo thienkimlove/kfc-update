@@ -41,17 +41,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('admin/settings', 'SettingsController');
     Route::resource('admin/banners', 'BannersController');
     Route::resource('admin/restaurants', 'RestaurantsController');
-
-    Route::post('admin/lang', function(\Illuminate\Http\Request $request){
-        if ($request->input('lang')) {
-            session()->put('language', $request->input('lang'));
-        }
-        return response()->json(['lang' => $request->input('lang')]);
-    });
 });
 
 #Frontend Routes
-
+Route::post('admin/lang', function(\Illuminate\Http\Request $request){
+    if ($request->input('lang')) {
+        session()->put('language', $request->input('lang'));
+    }
+    return response()->json(['lang' => $request->input('lang')]);
+});
 Route::get('/', 'FrontendController@index');
 Route::get('category/{value}', 'FrontendController@category');
 Route::get('catalog/{value}', 'FrontendController@catalog');

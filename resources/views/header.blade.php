@@ -1,4 +1,4 @@
-<header class="header">
+﻿<header class="header">
     <div class="header-top">
         <div class="fix">
             <a class="btn-ru" href="" title="">Russian</a>
@@ -39,7 +39,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="career-in.html">Career in KFC</a>
+                                <a href="career-in.html">Career in Fornari</a>
                             </li>
                             <li>
                                 <a href="work-sheet.html">Work sheet</a>
@@ -47,16 +47,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" title="">Business with KFC</a>
+                        <a href="#" title="">Business with Fornari</a>
                         <ul>
                             <li><a href="franchising.html">Franchising</a></li>
                             <li><a href="to-owners-of-land-plots-and-premises.html">To the Owners of Land Plots and Premises</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" title="">About KFC</a>
+                        <a href="#" title="">About Fornari</a>
                         <ul>
-                            <li><a href="{{url('kfconline')}}">#KFC Online</a></li>
+                            <li><a href="{{url('kfconline')}}">#Fornari Online</a></li>
                             <li><a href="{{url('history')}}">History</a></li>
                             <li><a href="{{url('contacts')}}">Contacts</a></li>
                         </ul>

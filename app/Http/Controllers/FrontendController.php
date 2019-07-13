@@ -117,6 +117,7 @@ class FrontendController extends Controller
     {
         $page = 'index';
 
+
         $topBanners = Banner::where('position', 'index_top')->get();
         $bottomBanners = Banner::where('position', 'index_bottom')->get();
 
